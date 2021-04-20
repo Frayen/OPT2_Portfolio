@@ -155,7 +155,7 @@ public class Main {
             System.out.println(BACK_CODE + ") go back to view products");
             System.out.println("0) View Brand");
             System.out.println("1) Edit product");
-            option = validateOptions(brandModel.getBrands().size() - 1, SCANNER.nextLine());
+            option = validateOptions(1, SCANNER.nextLine());
             switch (option) {
                 case BACK_CODE:
                     break;
@@ -185,7 +185,7 @@ public class Main {
                 continue;
             }
             System.out.println(brandView.brandMenu(index));
-            option = validateOptions(brandModel.getBrands().size() - 1, SCANNER.nextLine());
+            option = validateOptions(brandModel.getBrand(index).getProducts().size() - 1, SCANNER.nextLine());
             if (option.equals(ERROR_CODE)) {
                 System.out.println("ERROR: unexpected input try again\n");
                 continue;
